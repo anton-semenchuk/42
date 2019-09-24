@@ -6,26 +6,27 @@
 #    By: ilongtow <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/20 20:09:33 by ilongtow          #+#    #+#              #
-#    Updated: 2019/09/24 14:35:08 by ilongtow         ###   ########.fr        #
+#    Updated: 2019/09/24 14:41:38 by ilongtow         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRCS = ft_*.c
+SRCS = $(wildcard *.c)
 
-OBJS = ft_*.o
+OBJS = $(patsubst %.c,%.o,$(SRCS))
 
 INCLUDES = ./
 
+.PHONY: all clean fclean re
+
 all: $(NAME)
 
-$(NAME): $(SRCS) libft.h
-	gcc -Wall -Wextra -Werror -I$(INCLUDES) -c $(SRCS)
+$(NAME): $(SRCS) $(OBJS) libft.h
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
-%.c : %.o
+%.o : %.c
 	gcc -c $< -o $@
 
 clean:
