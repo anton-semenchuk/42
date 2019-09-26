@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilongtow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/24 14:11:13 by ilongtow          #+#    #+#             */
-/*   Updated: 2019/09/24 16:51:10 by ilongtow         ###   ########.fr       */
+/*   Created: 2019/09/25 00:58:09 by ilongtow          #+#    #+#             */
+/*   Updated: 2019/09/25 01:28:27 by ilongtow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	int	i;
+	char	*substr;
 
-	i = 0;
-	while (s[i])
-		i++;
-	while (i != 0)
-	{
-		if (*(s + i) == (char)c)
-			return ((char *)(s + i));
-		i--;
-	}
-	if (*(s + i) == (char)c)
-		return ((char *)(s + i));
-	return (NULL);
-}	
+	if (len + 1 < len)
+		return (NULL);
+	if (!(substr = (char *)malloc(sizeof(char) * len + 1)))
+		return (NULL);
+	ft_strncpy(substr, s + start, len);
+	substr[len] = '\0';
+	return (substr);
+}

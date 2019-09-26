@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilongtow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/24 14:11:13 by ilongtow          #+#    #+#             */
-/*   Updated: 2019/09/24 16:51:10 by ilongtow         ###   ########.fr       */
+/*   Created: 2019/09/24 21:12:33 by ilongtow          #+#    #+#             */
+/*   Updated: 2019/09/24 21:14:06 by ilongtow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int		ft_isalnum(int c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	while (i != 0)
-	{
-		if (*(s + i) == (char)c)
-			return ((char *)(s + i));
-		i--;
-	}
-	if (*(s + i) == (char)c)
-		return ((char *)(s + i));
-	return (NULL);
-}	
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (1);
+	else
+		return (0);
+}

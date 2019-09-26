@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilongtow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/24 14:11:13 by ilongtow          #+#    #+#             */
-/*   Updated: 2019/09/24 16:51:10 by ilongtow         ###   ########.fr       */
+/*   Created: 2019/09/25 01:37:07 by ilongtow          #+#    #+#             */
+/*   Updated: 2019/09/25 02:07:27 by ilongtow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
+	char	*res;
 
-	i = 0;
-	while (s[i])
-		i++;
-	while (i != 0)
-	{
-		if (*(s + i) == (char)c)
-			return ((char *)(s + i));
-		i--;
-	}
-	if (*(s + i) == (char)c)
-		return ((char *)(s + i));
-	return (NULL);
-}	
+	res = NULL;
+	if (!(res = (char *)malloc(sizeof(char) * \
+		(ft_strlen(s1) + ft_strlen(s2) + 1))))
+		return (NULL);
+	ft_strcpy(res, s1);
+	ft_strcpy(res + ft_strlen(s1), s2);
+	return (res);
+}

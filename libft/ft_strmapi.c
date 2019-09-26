@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilongtow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/24 14:11:13 by ilongtow          #+#    #+#             */
-/*   Updated: 2019/09/24 16:51:10 by ilongtow         ###   ########.fr       */
+/*   Created: 2019/09/25 00:50:22 by ilongtow          #+#    #+#             */
+/*   Updated: 2019/09/25 00:50:24 by ilongtow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i;
+	char 			*new_str;
+	unsigned int	i;
 
 	i = 0;
-	while (s[i])
-		i++;
-	while (i != 0)
+	if (!(new_str = (char *)(malloc(sizeof(char) * ft_strlen(s) + 1))))
+		return (NULL);
+	ft_strcpy(new_str, s);
+	while (new_str[i])
 	{
-		if (*(s + i) == (char)c)
-			return ((char *)(s + i));
-		i--;
+		new_str[i] = f(i, new_str[i]);
+		i++;
 	}
-	if (*(s + i) == (char)c)
-		return ((char *)(s + i));
-	return (NULL);
-}	
+	return (new_str);
+}
