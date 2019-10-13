@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilongtow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/22 18:30:15 by ilongtow          #+#    #+#             */
-/*   Updated: 2019/09/26 22:20:25 by ilongtow         ###   ########.fr       */
+/*   Created: 2019/10/11 18:38:26 by ilongtow          #+#    #+#             */
+/*   Updated: 2019/10/11 18:50:02 by ilongtow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	int	len1;
-	int	len2;
-
-	len1 = 0;
-	len2 = 0;
-	while (s1[len1])
-		len1++;
-	while (s2[len2])
-		s1[len1++] = s2[len2++];
-	s1[len1] = '\0';
-	return (s1);
+	if (alst && del)
+	{
+		del((*alst)->content, (*alst)->content_size);
+		free(*alst);
+		*alst = NULL;
+	}
 }

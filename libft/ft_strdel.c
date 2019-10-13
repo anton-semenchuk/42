@@ -6,7 +6,7 @@
 /*   By: ilongtow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 22:46:50 by ilongtow          #+#    #+#             */
-/*   Updated: 2019/09/24 22:47:42 by ilongtow         ###   ########.fr       */
+/*   Updated: 2019/09/26 21:57:39 by ilongtow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 void	ft_strdel(char **as)
 {
-	free(*as);
-	*as = NULL;
+	if (as != NULL)
+	{
+		free(*as);
+		*as = NULL;
+	}
 }

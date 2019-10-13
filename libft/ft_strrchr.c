@@ -6,7 +6,7 @@
 /*   By: ilongtow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 14:11:13 by ilongtow          #+#    #+#             */
-/*   Updated: 2019/09/24 16:51:10 by ilongtow         ###   ########.fr       */
+/*   Updated: 2019/09/26 22:25:35 by ilongtow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,4 @@ char	*ft_strrchr(const char *s, int c)
 	if (*(s + i) == (char)c)
 		return ((char *)(s + i));
 	return (NULL);
-}	
+}

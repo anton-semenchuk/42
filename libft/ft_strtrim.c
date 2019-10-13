@@ -6,7 +6,7 @@
 /*   By: ilongtow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/26 12:41:24 by ilongtow          #+#    #+#             */
-/*   Updated: 2019/09/26 13:59:00 by ilongtow         ###   ########.fr       */
+/*   Updated: 2019/09/26 22:10:56 by ilongtow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strtrim(char const *s)
 
 	i = 0;
 	start = 0;
+	if (!s)
+		return (NULL);
 	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 		i++;
 	start = i;

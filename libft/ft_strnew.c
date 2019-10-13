@@ -6,7 +6,7 @@
 /*   By: ilongtow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 22:10:09 by ilongtow          #+#    #+#             */
-/*   Updated: 2019/09/24 22:41:59 by ilongtow         ###   ########.fr       */
+/*   Updated: 2019/09/26 21:54:45 by ilongtow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ char	*ft_strnew(size_t size)
 {
 	char	*str;
 
-	str = NULL;
+	if (size + 1 < size)
+		return (NULL);
 	if (!(str = (char *)malloc(sizeof(char) * (size + 1))))
 		return (NULL);
 	ft_bzero(str, size + 1);

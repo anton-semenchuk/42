@@ -6,7 +6,7 @@
 /*   By: ilongtow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 19:25:45 by ilongtow          #+#    #+#             */
-/*   Updated: 2019/09/22 19:34:05 by ilongtow         ###   ########.fr       */
+/*   Updated: 2019/09/26 22:23:23 by ilongtow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	int 	len1;
+	int		len1;
 	int		len2;
 	size_t	i;
 

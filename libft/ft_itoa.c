@@ -6,21 +6,20 @@
 /*   By: ilongtow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/26 19:41:46 by ilongtow          #+#    #+#             */
-/*   Updated: 2019/09/26 20:34:22 by ilongtow         ###   ########.fr       */
+/*   Updated: 2019/09/26 22:18:02 by ilongtow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-
 static void		ft_isnegative(int *n, int *minus)
 {
 	if (*n < 0)
-		{
-			*n *= -1;
-			*minus = 1;
-		}
+	{
+		*n *= -1;
+		*minus = 1;
+	}
 }
 
 char			*ft_itoa(int n)

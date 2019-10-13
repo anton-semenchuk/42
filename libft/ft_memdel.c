@@ -6,15 +6,17 @@
 /*   By: ilongtow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 21:52:48 by ilongtow          #+#    #+#             */
-/*   Updated: 2019/09/24 22:09:56 by ilongtow         ###   ########.fr       */
+/*   Updated: 2019/09/26 21:47:33 by ilongtow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
 
 void	ft_memdel(void **ap)
 {
-	free(*ap);
-	*ap = NULL;
+	if (ap != NULL)
+	{
+		free(*ap);
+		*ap = NULL;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: ilongtow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 23:04:32 by ilongtow          #+#    #+#             */
-/*   Updated: 2019/09/24 23:13:00 by ilongtow         ###   ########.fr       */
+/*   Updated: 2019/09/26 22:06:17 by ilongtow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	unsigned int i;
 
 	i = -1;
-	while (s[++i])
-		f(i, s + i);
+	if (s && f)
+		while (s[++i])
+			f(i, s + i);
 }

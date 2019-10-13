@@ -6,7 +6,7 @@
 /*   By: ilongtow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/25 00:50:22 by ilongtow          #+#    #+#             */
-/*   Updated: 2019/09/25 00:50:24 by ilongtow         ###   ########.fr       */
+/*   Updated: 2019/09/26 22:24:10 by ilongtow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char 			*new_str;
+	char			*new_str;
 	unsigned int	i;
 
+	if (s == NULL || f == NULL)
+		return (NULL);
 	i = 0;
 	if (!(new_str = (char *)(malloc(sizeof(char) * ft_strlen(s) + 1))))
 		return (NULL);

@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilongtow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/22 18:30:15 by ilongtow          #+#    #+#             */
-/*   Updated: 2019/09/26 22:20:25 by ilongtow         ###   ########.fr       */
+/*   Created: 2019/10/11 19:14:10 by ilongtow          #+#    #+#             */
+/*   Updated: 2019/10/11 19:52:21 by ilongtow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+void		ft_lstadd(t_list **alst, t_list *new)
 {
-	int	len1;
-	int	len2;
-
-	len1 = 0;
-	len2 = 0;
-	while (s1[len1])
-		len1++;
-	while (s2[len2])
-		s1[len1++] = s2[len2++];
-	s1[len1] = '\0';
-	return (s1);
+	t_list	*elem;
+	if (alst && new)
+	{
+		elem = nex;
+		elem->next = *alst;
+		*alst = elem;
+	}
 }
